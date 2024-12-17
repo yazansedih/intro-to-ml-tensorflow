@@ -39,7 +39,11 @@ def parse_cl_arguments():
     parser.add_argument('--top_k', type=int, default=5, help='Number of top predictions to display')
     parser.add_argument('--category_names', type=str, default=None, help='Path to JSON file mapping labels to flower names')
     parser.add_argument('--verbose', action='store_true', help='Enable verbose logging')
+    parser.add_argument('--output_file', type=str, default=None, help='Path to output the predictions to a file')
+    parser.add_argument('--image_size', type=int, default=224, help='Resize the image to this size before predicting (default is 224x224)')
+    
     return parser.parse_args()
+
 
 def load_model(model_path):
     print(model_path)
